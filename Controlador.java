@@ -50,7 +50,10 @@ public class Controlador {
                 case 6:
                    //AQUI VA HÁBITOS FINANCIEROS SALUDABLES
                     String consejoAleatorio = habitos.obtenerConsejo();
-                    System.out.println("Consejo financiero saludable: " + consejoAleatorio);
+                    System.out.println("------------------------------------------------------");
+                    System.out.println("CONSEJO FINANCIERO SALUDABLE");
+                    System.out.println("------------------------------------------------------");
+                    System.out.println(consejoAleatorio); 
                     break;
                 case 7: 
                     continuar = false;
