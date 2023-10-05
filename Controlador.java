@@ -42,7 +42,49 @@ public class Controlador {
                     break;
                 case 4:
                 //AQUI VA IMPUESTOS
-                    
+                    System.out.println("Seleccione el tipo de impuesto (1= IVA ; 2= ISR): ");
+                    int tipoImpuesto = scanner.nextInt(); 
+                    Impuestos impuesto = null; 
+                    switch (tipoImpuesto){
+                        case 1: //OPCIONES IVA
+                            System.out.println("Impuesto seleccionado IVA");
+                            System.out.println("Seleccione lo que desea hacer"); 
+                            int ivaopciones = scanner.nextInt();
+                            System.out.println("1. Calcular IVA sobre productos");
+                            System.out.println("2. Calcular IVA pequeño contribuyente");
+                            System.out.println("3. Información sobre IVA");
+                            System.out.println("4. Exoneraciones por ley");
+                            switch (ivaopciones){
+                                case 1: 
+                                System.out.println("La tarifa es del 12% sobre el valor base"); 
+                                System.out.println("Ingrese el valor base"); 
+                                double monto = scanner.nextDouble(); 
+                                double montoconIVA = monto + (monto*0.12); 
+                                System.out.println("El monto ingresado con IVA es de: Q." + montoconIVA); 
+                                break; 
+                                case 2: 
+                                System.out.println("La tarifa es del 5% sobre el monto de ventas o servicios"); 
+                                System.out.println("Esto aplica cuando no se exceden los Q. 150,000.00 en un año calendario");
+                                System.out.println("Ingrese el valor base"); 
+                                double montopc = scanner.nextDouble(); 
+                                double montoconIVApc = montopc + (montopc*0.5); 
+                                System.out.println("El monto ingresado con IVA es de: Q." + montoconIVApc); 
+                                break; 
+                                case 3: 
+                                System.out.println("El Impuesto al Valor Agregado (IVA) es un impuesto indirecto que grava el valor agregado en cada etapa de la cadena de producción y comercialización. Los contribuyentes registrados deben presentar declaraciones mensuales y pagar el IVA correspondiente a la Superintendencia de Administración Tributaria (SAT) de Guatemala.\r\n" + //
+                                        "\r\n" + //
+                                        ""); 
+                                break; 
+                                case 4: 
+                                System.out.println("Estan exentos de IVA: ");
+                                System.out.println("Colegios Privados, universidades, IGGS, Entidades religiosas, Confederación deportiva y Comité Olímpico"); 
+                                break; 
+                            }
+                            break; 
+                            case 2: //OPCIONES ISR
+                            break;
+                    }
+
                     break;
                 case 5:
                     //AQUI VA SEGUROS
