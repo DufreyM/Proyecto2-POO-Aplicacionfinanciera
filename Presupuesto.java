@@ -1,3 +1,6 @@
+//Fecha de creación: 05 de septiembre de 2023
+//Fecha de última modificación: 05 de octubre de 2023
+
 public class Presupuesto {
     private int presupuesto;
     private int necesidades_basicas;
@@ -52,6 +55,9 @@ public class Presupuesto {
         this.ahorro = ahorro;
     }
 
+    /**
+     * @return
+     */
     public double CalculosNecesidadesBasicas(){
         int resultados_presupuesto1 = presupuesto - necesidades_basicas;
         return resultados_presupuesto1;
