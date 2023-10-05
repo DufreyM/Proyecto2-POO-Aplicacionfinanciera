@@ -81,7 +81,44 @@ public class Controlador {
                                 break; 
                             }
                             break; 
-                            case 2: //OPCIONES ISR
+                            case 2: //OPCIONES IUSI
+                            System.out.println("Impuesto seleccionado IUSI");
+                            System.out.println("Seleccione lo que desea hacer"); 
+                            System.out.println("1. Calcular IUSI sobre bien inmueble");
+                            System.out.println("2. Mostrar tabla de tangos IUSI");
+                            System.out.println("3. Información sobre IUSI");
+                            int iusiopciones = scanner.nextInt();
+                            switch (iusiopciones){
+                                case 1: 
+                                System.out.println("Ingrese el valor de su bien inmueble (sin valor decimal)");
+                                double totalIUSI = 0; 
+                                int vinmueble = scanner.nextInt(); 
+                                if(vinmueble < 2000){
+                                    System.out.println("Estas exento de este impuesto");
+                                    totalIUSI = 0; 
+                                }
+                                if(vinmueble > 2000 & vinmueble < 20000){
+                                    totalIUSI = vinmueble * 0.002; 
+                                }
+                                if(vinmueble > 20000 & vinmueble < 70000){
+                                    totalIUSI = vinmueble * 0.006; 
+                                }
+                                if(vinmueble > 70000){
+                                    totalIUSI = vinmueble * 0.009; 
+                                }
+                                    System.out.println("Total a pagar por IUSI es:"+ totalIUSI);
+                                break; 
+                                case 2: 
+                                System.out.println("De Q0 a Q2,000.00 = exento. ");
+                                System.out.println("De Q2,000.01 a Q20,000.00 =  0.2 %");
+                                System.out.println("De Q20,000.01 a Q70,000.00 = 0.6 %");
+                                System.out.println("De Q70,000.01 en adelante = 0.9 %");
+                                break; 
+                                case 3:
+                                System.out.println("El Impuesto Único Sobre Inmuebles, conocido como IUSI, es un tributo municipal que se aplica en Guatemala sobre la propiedad de bienes inmuebles, como terrenos, edificios y construcciones. Este impuesto se calcula en base al valor catastral de la propiedad y se destina a financiar servicios públicos locales, como mantenimiento de calles y obras municipales."); 
+                                break; 
+                            }
+
                             break;
                     }
 

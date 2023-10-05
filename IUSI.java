@@ -8,10 +8,10 @@
  * Fuentes de información: [crédito a toda fuente de información que haya aportado al desarrollo del programa]
  */
 
-public class ISR extends Impuestos {
+public class IUSI extends Impuestos {
     private double porcentajeISR;
 
-    public ISR(double monto, double porcentajeISR) {
+    public IUSI(double monto, double porcentajeISR) {
         super(monto);
         this.porcentajeISR = porcentajeISR;
     }
