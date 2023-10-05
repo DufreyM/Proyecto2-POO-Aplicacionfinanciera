@@ -8,7 +8,7 @@ public class EducacionFinanciera {
         edadUsuario = 0;
     }
 
-    public EducacionFinanciera(String edadUsuario) {
+    public EducacionFinanciera(int edadUsuario) {
         this.edadUsuario = edadUsuario;
     }
 
