@@ -49,11 +49,11 @@ public class Controlador {
                         case 1: //OPCIONES IVA
                             System.out.println("Impuesto seleccionado IVA");
                             System.out.println("Seleccione lo que desea hacer"); 
-                            int ivaopciones = scanner.nextInt();
                             System.out.println("1. Calcular IVA sobre productos");
                             System.out.println("2. Calcular IVA pequeño contribuyente");
                             System.out.println("3. Información sobre IVA");
                             System.out.println("4. Exoneraciones por ley");
+                            int ivaopciones = scanner.nextInt();
                             switch (ivaopciones){
                                 case 1: 
                                 System.out.println("La tarifa es del 12% sobre el valor base"); 
