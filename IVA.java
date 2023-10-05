@@ -19,5 +19,5 @@ public class IVA extends Impuestos {
     @Override
     public double calcularimpuesto() {
         return monto * (porcentajeIVA / 100);
-    }
+    }  
 }
