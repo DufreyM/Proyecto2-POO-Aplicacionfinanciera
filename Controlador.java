@@ -34,11 +34,68 @@ public class Controlador {
             int opcion = scanner.nextInt();
             scanner.nextLine(); //Por si se queda un espacio flotando :)
 
-            switch (opcion) { //Switch con los posibles casos según el menú. 
+            switch (opcion) { 
                 case 1:
-                    //AQUI VA PRESUPUESTO Y AHORRO 
+                    //AQUI VA PRESUPUESTO 
+                    System.out.println("\nBienvenido al simulador del presupuesto");
+                    System.out.println("A continuacion ingresa tu ingreso mensual");
+                    int presu = scanner.nextInt();
+                    presupuesto.setPresupuesto(presu);
 
-                    break;
+                    while (presu > 0) {
+                        System.out.println("\nTu presupuesto actual es de: " + presu);
+                        System.out.println("Ingresa la cantidad que desees dedicar a los gastos básicos");
+                        System.out.println("(Comida, Salud, Vivienda, Transporte y demás)");
+                        int basicas = scanner.nextInt();
+                        presupuesto.setNecesidades_basicas(basicas);
+                        double presupuestoRestante = presupuesto.CalculosNecesidadesBasicas();
+                        System.out.println("\nTe quedan $" + presupuestoRestante + " para otras categorías.");
+
+                        if (presupuestoRestante < 0){
+                            System.out.println("Oh no! El presupuesto no a alzanzado");
+                            break;
+                        }
+                    
+                        System.out.println("Ingresa la cantidad que desees dedicar a deudas y pagos");
+                        int deudas = scanner.nextInt();
+                        presupuesto.setDeudas_pagos(deudas);
+                        double presupuestoRestante2 = presupuesto.CalculosDeudasPagos();
+                        System.out.println("\nTe quedan $" + presupuestoRestante2 + " para otras categorías.");
+
+                        if (presupuestoRestante2 < 0){
+                            System.out.println("Oh no! El presupuesto no a alzanzado");
+                            break;
+                        }
+                    
+                        System.out.println("Ingresa la cantidad que desees dedicar a Actividades recreativas");
+                        int actividades = scanner.nextInt();
+                        presupuesto.setActividades_recreativas(actividades);
+                        double presupuestoRestante3 = presupuesto.CalculosActividadesRecreativas();
+                        System.out.println("\nTe quedan $" + presupuestoRestante3 + " para otras categorías.");
+
+                        if (presupuestoRestante3 < 0){
+                            System.out.println("Oh no! El presupuesto no a alzanzado");
+                            break;
+                        }
+                    
+                        System.out.println("Ingresa la cantidad que desees dedicar a Ahorro");
+                        int ahorrar = scanner.nextInt();
+                        presupuesto.setAhorro(ahorrar);
+                        double presupuestoRestante4 = presupuesto.CalculosAhorro();
+
+                        if (presupuestoRestante4 < 0) {
+                            System.out.println("Oh no! Te quedaste sin presupuesto");
+                            break; // Terminar el programa si presupuestoRestante4 es menor a 0
+                        }
+
+                        System.out.println("\nFelicidades te quedan $" + presupuestoRestante4 + " libres para ti");
+
+                        // Terminar el programa después de mostrar el mensaje de felicitación
+                        break;
+                    }
+            break;
+                    
+                    
                 case 2:
                     //AQUI VA LA FUNCIÓN DE EDUCACIÓN FINANCIERA PERSONAL
                     System.out.println("Bienvenido al tema de Educacion Financiera");
@@ -128,7 +185,6 @@ public class Controlador {
                         }
                     }
                     
-
                     break;
                 case 3:
                     //AQUI VA DEUDAS Y CRÉDITO
@@ -279,7 +335,7 @@ public class Controlador {
      */
     private void mostrarMenu() { //Imprime el menú
         System.out.println("\nMenú:");
-        System.out.println("1. Presupuesto y ahorro");
+        System.out.println("1. Simulador presupuesto");
         System.out.println("2. Educación Financiera Personal");
         System.out.println("3. Deudas y Crédito");
         System.out.println("4. Impuestos");
