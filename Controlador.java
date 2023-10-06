@@ -19,7 +19,6 @@ public class Controlador {
     public Controlador(){
         scanner = new Scanner(System.in); 
         habitos=new HabitosFinancierosSaludables();
-        DeudasYCredito deudasYCredito = new DeudasYCredito();
     }
 
     public void ejecutar(){
