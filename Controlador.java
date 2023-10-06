@@ -8,6 +8,7 @@
  * Fuentes de información: [crédito a toda fuente de información que haya aportado al desarrollo del programa]
  */
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Controlador {
@@ -15,12 +16,15 @@ public class Controlador {
     private EducacionFinanciera educacionFinanciera;
     private Presupuesto presupuesto;
     private Scanner scanner; 
+    private DeudasYCredito deudasyCredito;
     
     public Controlador(){
         scanner = new Scanner(System.in); 
         habitos=new HabitosFinancierosSaludables();
         educacionFinanciera = new EducacionFinanciera();
         presupuesto = new Presupuesto();
+        DeudasYCredito deudasYCredito = new DeudasYCredito();
+
     }
 
     public void ejecutar(){
@@ -48,8 +52,37 @@ public class Controlador {
                     break;
                 case 3:
                     //AQUI VA DEUDAS Y CRÉDITO
-                    
+                    System.out.println("------ Menú ------");
+                    System.out.println("1. Mostrar Crédito");
+                    System.out.println("2. Mostrar Deudas");
+                    System.out.println("3. Cancelar Deudas");
+                    System.out.println("5. Salir");
+                    System.out.println("------------------");
+
+                        System.out.print("Ingresa el número de la opción que deseas realizar: ");
+                        int opcioncredito = scanner.nextInt();
+            
+                        switch (opcioncredito) {
+                            case 1:
+                                
+                                break;
+                            case 2:
+                             
+                                break;
+                            case 3:
+                                
+                                break;
+                            case 4:
+                                System.out.println("Saliendo del programa. ¡Hasta luego!");
+                                scanner.close();
+                                System.exit(0);
+                                break;
+                            default:
+                                System.out.println("Opción no válida. Por favor, ingresa un número del 1 al 5.");
+                        }
+
                     break;
+
                 case 4:
                 //AQUI VA IMPUESTOS
                     System.out.println("Seleccione el tipo de impuesto (1= IVA ; 2= ISR): ");
@@ -135,6 +168,12 @@ public class Controlador {
                     break;
                 case 5:
                     //AQUI VA SEGUROS
+                    System.out.println(Seguros.informacion);
+                    System.out.println("Tipos de Seguros:");
+                    for (Map.Entry<String, String> entry : Seguros.tipos.entrySet()) {
+                        System.out.println(entry.getKey() + ": " + entry.getValue());
+                    }
+
                     break;
                 case 6:
                    //AQUI VA HÁBITOS FINANCIEROS SALUDABLES
