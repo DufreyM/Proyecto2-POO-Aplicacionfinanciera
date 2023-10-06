@@ -45,7 +45,88 @@ public class Controlador {
                     System.out.println("Antes de empezar dinos tu edad, para poder darte una experiencia mas personalizada");
                     int edad = scanner.nextInt();
                     educacionFinanciera.setEdadUsuario(edad);
-                    System.out.println(edad);
+                    if (edad > 18){
+                        System.out.println("------ Menú ------");
+                        System.out.println("1. ¿Que es la planificacion financiera?");
+                        System.out.println("2. Ahorro e Inversion");
+                        System.out.println("3. Gestion de deudas");
+                        System.out.println("5. Impuestos");
+                        System.out.println("6. Credito");
+                        System.out.println("7. Planificacion para el futuro");
+                        System.out.println("------------------");
+                        int opcionEducacionAdul = scanner.nextInt();
+                        switch (opcionEducacionAdul){
+                            case 1:
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.planificacionFinancieraPersonalAdul();
+
+                            case 2: 
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.ahorroInversionAdul();
+
+                            case 3: 
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.gestionDeDeudasAdul();
+
+                            case 4:
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.educacionSobreImpuestosAdul();
+
+                            case 5: 
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.manejoDelCreditoAdul();
+
+                            case 6: 
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.planificacionParaElFuturoAdul();
+
+                            default:
+                            System.out.println("La opcion ingresada no es valida");
+
+                        }
+
+                    }
+
+                    if (edad <= 18){
+                        System.out.println("------ Menú ------");
+                        System.out.println("1. ¿Que es la planificacion financiera?");
+                        System.out.println("2. Ahorro e Inversion");
+                        System.out.println("3. Gestion del dinero");
+                        System.out.println("5. Impuestos");
+                        System.out.println("6. Credito");
+                        System.out.println("7. Planificacion para el futuro");
+                        System.out.println("------------------");
+                        int opcionEducacionAdol = scanner.nextInt();
+
+                        switch(opcionEducacionAdol){
+                            case 1:
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.planificacionFinancieraPersonalAdul();
+
+                            case 2: 
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.ahorroInversionAdolescente();
+
+                            case 3:
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.gestionDeDineroAdolescente();
+
+                            case 4:
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.educacionSobreImpuestoAdolescente();
+
+                            case 5: 
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.manejoDelCreditoAdolescente();
+
+                            case 6:
+                            System.out.println("Aprendamos juntos\n");
+                            educacionFinanciera.planificacionParaElFuturoAdolescente();
+
+                            default:
+                            System.out.println("La opcion ingresada no es valida");
+                        }
+                    }
                     
 
                     break;
