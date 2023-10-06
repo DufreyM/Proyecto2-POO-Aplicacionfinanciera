@@ -13,12 +13,17 @@ import java.util.Scanner;
 
 public class Controlador {
     private HabitosFinancierosSaludables habitos; 
+    private EducacionFinanciera educacionFinanciera;
+    private Presupuesto presupuesto;
     private Scanner scanner; 
     private DeudasYCredito deudasyCredito;
     
     public Controlador(){
         scanner = new Scanner(System.in); 
         habitos=new HabitosFinancierosSaludables();
+        educacionFinanciera = new EducacionFinanciera();
+        presupuesto = new Presupuesto();
+        DeudasYCredito deudasYCredito = new DeudasYCredito();
     }
 
     public void ejecutar(){
@@ -35,7 +40,13 @@ public class Controlador {
 
                     break;
                 case 2:
-                    //AQUI VA LA FUNCIÓN DE EDUCACIÓN FINANCIERA PERSONAL 
+                    //AQUI VA LA FUNCIÓN DE EDUCACIÓN FINANCIERA PERSONAL
+                    System.out.println("Bienvenido al tema de Educacion Financiera");
+                    System.out.println("Antes de empezar dinos tu edad, para poder darte una experiencia mas personalizada");
+                    int edad = scanner.nextInt();
+                    educacionFinanciera.setEdadUsuario(edad);
+                    System.out.println(edad);
+                    
 
                     break;
                 case 3:
