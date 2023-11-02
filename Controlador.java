@@ -18,7 +18,6 @@ public class Controlador {
     private Scanner scanner; 
     private DeudasYCredito cuenta;
     private Vista vista;
-    private IVA iva; 
     
     public Controlador(){
         scanner = new Scanner(System.in); 
@@ -27,7 +26,6 @@ public class Controlador {
         presupuesto = new Presupuesto();
         cuenta = new DeudasYCredito();
         vista = new Vista(); 
-        iva = new IVA(); 
     }
 
     public void ejecutar(){
@@ -211,8 +209,7 @@ public class Controlador {
                                         ""); 
                                 break; 
                                 case 4: 
-                                System.out.println("Estan exentos de IVA: ");
-                                System.out.println("Colegios Privados, universidades, IGGS, Entidades religiosas, Confederación deportiva y Comité Olímpico"); 
+                                vista.exentosIVA();
                                 break; 
                             }
                             break; 
@@ -243,7 +240,7 @@ public class Controlador {
                                 vista.rangosIUSI();
                                 break; 
                                 case 3:
-                                System.out.println("El Impuesto Único Sobre Inmuebles, conocido como IUSI, es un tributo municipal que se aplica en Guatemala sobre la propiedad de bienes inmuebles, como terrenos, edificios y construcciones. Este impuesto se calcula en base al valor catastral de la propiedad y se destina a financiar servicios públicos locales, como mantenimiento de calles y obras municipales."); 
+                                vista.informacionIUSI();
                                 break; 
                             }
 

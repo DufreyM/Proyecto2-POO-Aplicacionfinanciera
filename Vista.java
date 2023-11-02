@@ -46,5 +46,13 @@ public class Vista {
         System.out.println("------------------");
     }
 
+    public void informacionIUSI(){
+        System.out.println("El Impuesto Único Sobre Inmuebles, conocido como IUSI, es un tributo municipal que se aplica en Guatemala sobre la propiedad de bienes inmuebles, como terrenos, edificios y construcciones. Este impuesto se calcula en base al valor catastral de la propiedad y se destina a financiar servicios públicos locales, como mantenimiento de calles y obras municipales.");              
+    }
+
+    public void exentosIVA(){
+        System.out.println("Estan exentos de IVA: ");
+        System.out.println("Colegios Privados, universidades, IGGS, Entidades religiosas, Confederación deportiva y Comité Olímpico");                      
+    }
     
 }
