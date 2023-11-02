@@ -29,7 +29,7 @@ public class Vista {
     public void IVA(){
         System.out.println("Impuesto seleccionado IVA");
         System.out.println("Seleccione lo que desea hacer"); 
-        System.out.println("1. Calcular IVA sobre productos");
+        System.out.println("1. Calcular IVA general sobre productos");
         System.out.println("2. Calcular IVA pequeño contribuyente");
         System.out.println("3. Información sobre IVA");
         System.out.println("4. Exoneraciones por ley");

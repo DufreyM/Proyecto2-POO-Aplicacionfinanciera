@@ -18,6 +18,8 @@ public class Controlador {
     private Scanner scanner; 
     private DeudasYCredito cuenta;
     private Vista vista;
+    private IVA IVA; 
+    private IUSI IUSI;
     
     public Controlador(){
         scanner = new Scanner(System.in); 
@@ -26,6 +28,8 @@ public class Controlador {
         presupuesto = new Presupuesto();
         cuenta = new DeudasYCredito();
         vista = new Vista(); 
+        IVA = new IVA();
+        IUSI = new IUSI(); 
     }
 
     public void ejecutar(){
@@ -39,62 +43,7 @@ public class Controlador {
             switch (opcion) { 
                 case 1:
                     //AQUI VA PRESUPUESTO 
-                    System.out.println("\nBienvenido al simulador del presupuesto");
-                    System.out.println("A continuacion ingresa tu ingreso mensual, únicamente números enteros (0000)");
-                    int presu = scanner.nextInt();
-                    presupuesto.setPresupuesto(presu);
-
-                    while (presu > 0) {
-                        System.out.println("\nTu presupuesto actual es de: " + presu);
-                        System.out.println("Ingresa la cantidad que desees dedicar a los gastos básicos");
-                        System.out.println("(Comida, Salud, Vivienda, Transporte y demás)");
-                        int basicas = scanner.nextInt();
-                        presupuesto.setNecesidades_basicas(basicas);
-                        double presupuestoRestante = presupuesto.CalculosNecesidadesBasicas();
-                        System.out.println("\nTe quedan $" + presupuestoRestante + " para otras categorías.");
-
-                        if (presupuestoRestante < 0){
-                            System.out.println("Oh no! El presupuesto no a alzanzado");
-                            break;
-                        }
-                    
-                        System.out.println("Ingresa la cantidad que desees dedicar a deudas y pagos");
-                        int deudas = scanner.nextInt();
-                        presupuesto.setDeudas_pagos(deudas);
-                        double presupuestoRestante2 = presupuesto.CalculosDeudasPagos();
-                        System.out.println("\nTe quedan $" + presupuestoRestante2 + " para otras categorías.");
-
-                        if (presupuestoRestante2 < 0){
-                            System.out.println("Oh no! El presupuesto no a alzanzado");
-                            break;
-                        }
-                    
-                        System.out.println("Ingresa la cantidad que desees dedicar a Actividades recreativas");
-                        int actividades = scanner.nextInt();
-                        presupuesto.setActividades_recreativas(actividades);
-                        double presupuestoRestante3 = presupuesto.CalculosActividadesRecreativas();
-                        System.out.println("\nTe quedan $" + presupuestoRestante3 + " para otras categorías.");
-
-                        if (presupuestoRestante3 < 0){
-                            System.out.println("Oh no! El presupuesto no a alzanzado");
-                            break;
-                        }
-                    
-                        System.out.println("Ingresa la cantidad que desees dedicar a Ahorro");
-                        int ahorrar = scanner.nextInt();
-                        presupuesto.setAhorro(ahorrar);
-                        double presupuestoRestante4 = presupuesto.CalculosAhorro();
-
-                        if (presupuestoRestante4 < 0) {
-                            System.out.println("Oh no! Te quedaste sin presupuesto");
-                            break; // Terminar el programa si presupuestoRestante4 es menor a 0
-                        }
-
-                        System.out.println("\nFelicidades te quedan $" + presupuestoRestante4 + " libres para ti");
-
-                        // Terminar el programa después de mostrar el mensaje de felicitación
-                        break;
-                    }
+                    presupuesto.calculopresupues(); 
             break;
                     
                     
@@ -186,64 +135,11 @@ public class Controlador {
                     switch (tipoImpuesto){
                         case 1: //OPCIONES IVA
                             vista.IVA();
-                            int ivaopciones = scanner.nextInt();
-                            switch (ivaopciones){
-                                case 1: 
-                                System.out.println("La tarifa es del 12% sobre el valor base"); 
-                                System.out.println("Ingrese el valor base"); 
-                                double monto = scanner.nextDouble(); 
-                                double montoconIVA = monto + (monto*0.12); 
-                                System.out.println("El monto ingresado con IVA es de: Q." + montoconIVA); 
-                                break; 
-                                case 2: 
-                                System.out.println("La tarifa es del 5% sobre el monto de ventas o servicios"); 
-                                System.out.println("Esto aplica cuando no se exceden los Q. 150,000.00 en un año calendario");
-                                System.out.println("Ingrese el valor base"); 
-                                double montopc = scanner.nextDouble(); 
-                                double montoconIVApc = montopc + (montopc*0.5); 
-                                System.out.println("El monto ingresado con IVA es de: Q." + montoconIVApc); 
-                                break; 
-                                case 3: 
-                                System.out.println("El Impuesto al Valor Agregado (IVA) es un impuesto indirecto que grava el valor agregado en cada etapa de la cadena de producción y comercialización. Los contribuyentes registrados deben presentar declaraciones mensuales y pagar el IVA correspondiente a la Superintendencia de Administración Tributaria (SAT) de Guatemala.\r\n" + //
-                                        "\r\n" + //
-                                        ""); 
-                                break; 
-                                case 4: 
-                                vista.exentosIVA();
-                                break; 
-                            }
+                            IVA.calculoIVA();
                             break; 
                             case 2: //OPCIONES IUSI
                             vista.IUSI();
-                            int iusiopciones = scanner.nextInt();
-                            switch (iusiopciones){
-                                case 1: 
-                                System.out.println("Ingrese el valor de su bien inmueble (sin valor decimal)");
-                                double totalIUSI = 0; 
-                                int vinmueble = scanner.nextInt(); 
-                                if(vinmueble < 2000){
-                                    System.out.println("Estas exento de este impuesto");
-                                    totalIUSI = 0; 
-                                }
-                                if(vinmueble > 2000 & vinmueble < 20000){
-                                    totalIUSI = vinmueble * 0.002; 
-                                }
-                                if(vinmueble > 20000 & vinmueble < 70000){
-                                    totalIUSI = vinmueble * 0.006; 
-                                }
-                                if(vinmueble > 70000){
-                                    totalIUSI = vinmueble * 0.009; 
-                                }
-                                    System.out.println("Total a pagar por IUSI es:"+ totalIUSI);
-                                break; 
-                                case 2: 
-                                vista.rangosIUSI();
-                                break; 
-                                case 3:
-                                vista.informacionIUSI();
-                                break; 
-                            }
-
+                            IUSI.calculoIUSI();
                             break;
                     }
 

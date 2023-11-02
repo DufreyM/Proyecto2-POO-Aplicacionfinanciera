@@ -1,12 +1,15 @@
 //Fecha de creación: 05 de septiembre de 2023
 //Fecha de última modificación: 05 de octubre de 2023
 
+import java.util.Scanner;
+
 public class Presupuesto {
     private int presupuesto;
     private int necesidades_basicas;
     private int deudas_pagos;
     private int actividades_recreativas;
     private int ahorro;
+    private Scanner scanner;
 
     public Presupuesto(){
         presupuesto = 0;
@@ -14,6 +17,7 @@ public class Presupuesto {
         deudas_pagos = 0;
         actividades_recreativas = 0;
         ahorro = 0;
+        scanner = new Scanner(System.in); 
     }
 
     public Presupuesto(int presupuesto, int necesidades_basicas, int deudas_pagos, int actividades_recreativas,
@@ -78,4 +82,62 @@ public class Presupuesto {
         return resultados_presupuesto4;
     }
 
+    public void calculopresupues(){
+        System.out.println("\nBienvenido al simulador del presupuesto");
+                    System.out.println("A continuacion ingresa tu ingreso mensual, únicamente números enteros (0000)");
+                    int presu = scanner.nextInt();
+                    setPresupuesto(presu);
+
+                    while (presu > 0) {
+                        System.out.println("\nTu presupuesto actual es de: " + presu);
+                        System.out.println("Ingresa la cantidad que desees dedicar a los gastos básicos");
+                        System.out.println("(Comida, Salud, Vivienda, Transporte y demás)");
+                        int basicas = scanner.nextInt();
+                        setNecesidades_basicas(basicas);
+                        double presupuestoRestante = CalculosNecesidadesBasicas();
+                        System.out.println("\nTe quedan $" + presupuestoRestante + " para otras categorías.");
+
+                        if (presupuestoRestante < 0){
+                            System.out.println("Oh no! El presupuesto no a alzanzado");
+                            break;
+                        }
+                    
+                        System.out.println("Ingresa la cantidad que desees dedicar a deudas y pagos");
+                        int deudas = scanner.nextInt();
+                        setDeudas_pagos(deudas);
+                        double presupuestoRestante2 = CalculosDeudasPagos();
+                        System.out.println("\nTe quedan $" + presupuestoRestante2 + " para otras categorías.");
+
+                        if (presupuestoRestante2 < 0){
+                            System.out.println("Oh no! El presupuesto no a alzanzado");
+                            break;
+                        }
+                    
+                        System.out.println("Ingresa la cantidad que desees dedicar a Actividades recreativas");
+                        int actividades = scanner.nextInt();
+                        setActividades_recreativas(actividades);
+                        double presupuestoRestante3 = CalculosActividadesRecreativas();
+                        System.out.println("\nTe quedan $" + presupuestoRestante3 + " para otras categorías.");
+
+                        if (presupuestoRestante3 < 0){
+                            System.out.println("Oh no! El presupuesto no a alzanzado");
+                            break;
+                        }
+                    
+                        System.out.println("Ingresa la cantidad que desees dedicar a Ahorro");
+                        int ahorrar = scanner.nextInt();
+                        setAhorro(ahorrar);
+                        double presupuestoRestante4 = CalculosAhorro();
+
+                        if (presupuestoRestante4 < 0) {
+                            System.out.println("Oh no! Te quedaste sin presupuesto");
+                            break; // Terminar el programa si presupuestoRestante4 es menor a 0
+                        }
+
+                        System.out.println("\nFelicidades te quedan $" + presupuestoRestante4 + " libres para ti");
+
+                        // Terminar el programa después de mostrar el mensaje de felicitación
+                        break;
+                    }
+    }
 }
