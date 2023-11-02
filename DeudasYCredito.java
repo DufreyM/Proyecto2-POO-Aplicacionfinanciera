@@ -17,7 +17,8 @@ public class DeudasYCredito {
     }
 
     public void mostrarDeudas() {
-        System.out.println("Cantidad de deudas: " + this.deudas);
+        double interes = this.credito + (this.credito * this.tasaInteres); 
+        System.out.println("Cantidad de deudas: " + interes);
     }
 
     public void tomarPrestamo(double cantidad) {
@@ -31,8 +32,8 @@ public class DeudasYCredito {
 
     public void pagarDeuda(double cantidad) {
         if (cantidad > 0) {
-            if (cantidad <= this.deudas) {
-                this.deudas -= cantidad;
+            if (cantidad <= this.credito) {
+                this.credito -= cantidad;
                 System.out.println("Has pagado " + cantidad + " de deuda.");
             } else {
                 System.out.println("La cantidad a pagar es mayor que tu deuda actual.");
@@ -43,8 +44,8 @@ public class DeudasYCredito {
     }
 
     public void calcularInteres() {
-        double interes = this.deudas * this.tasaInteres;
-        this.deudas += interes;
+        double interes = this.credito * this.tasaInteres;
+        this.credito += interes;
         System.out.println("Se ha calculado un interés de " + interes + " sobre tus deudas.");
     }
 

@@ -40,7 +40,7 @@ public class Controlador {
                 case 1:
                     //AQUI VA PRESUPUESTO 
                     System.out.println("\nBienvenido al simulador del presupuesto");
-                    System.out.println("A continuacion ingresa tu ingreso mensual");
+                    System.out.println("A continuacion ingresa tu ingreso mensual, únicamente números enteros (0000)");
                     int presu = scanner.nextInt();
                     presupuesto.setPresupuesto(presu);
 
