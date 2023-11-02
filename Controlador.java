@@ -130,7 +130,7 @@ public class Controlador {
 
                 case 4:
                 //AQUI VA IMPUESTOS
-                    System.out.println("Seleccione el tipo de impuesto (1= IVA ; 2= ISR): ");
+                    System.out.println("Seleccione el tipo de impuesto (1= IVA ; 2= IUSI): ");
                     int tipoImpuesto = scanner.nextInt(); 
                     switch (tipoImpuesto){
                         case 1: //OPCIONES IVA

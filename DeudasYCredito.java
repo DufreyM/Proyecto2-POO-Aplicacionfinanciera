@@ -17,8 +17,8 @@ public class DeudasYCredito {
     }
 
     public void mostrarDeudas() {
-        double interes = this.credito + (this.credito * this.tasaInteres); 
-        System.out.println("Cantidad de deudas: " + interes);
+        double deudas = this.credito + (this.credito * this.tasaInteres); 
+        System.out.println("Cantidad de deudas: " + deudas);
     }
 
     public void tomarPrestamo(double cantidad) {
@@ -32,7 +32,7 @@ public class DeudasYCredito {
 
     public void pagarDeuda(double cantidad) {
         if (cantidad > 0) {
-            if (cantidad <= this.credito) {
+            if (cantidad <= this.deudas) {
                 this.credito -= cantidad;
                 System.out.println("Has pagado " + cantidad + " de deuda.");
             } else {
