@@ -61,10 +61,11 @@ public class Login {
     
             lector.close();
     
-            if (inicioSesionExitoso) {
+            if (inicioSesionExitoso == true) {
                 System.out.println("Has iniciado sesión.");
             } else {
                 System.out.println("Parece que el usuario o contraseña no coinciden.");
+                
             }
     
         } catch (IOException e) {

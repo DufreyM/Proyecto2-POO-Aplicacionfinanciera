@@ -80,7 +80,7 @@ public class Controlador {
                 case 2:
                     //AQUI VA LA FUNCIÓN DE EDUCACIÓN FINANCIERA PERSONAL
                     System.out.println("Bienvenido al tema de Educacion Financiera");
-                    System.out.println("Antes de empezar dinos tu edad, para poder darte una experiencia mas personalizada");
+                    System.out.println("Antes de empezar ingresa tu edad, para poder darte una experiencia mas personalizada");
                     int edad = scanner.nextInt();
                     educacionFinanciera.setEdadUsuario(edad);
                     if (edad > 18){

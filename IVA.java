@@ -70,7 +70,11 @@ public IVA(){
                                 System.out.println("El Impuesto al Valor Agregado (IVA) es un impuesto indirecto que grava el valor agregado en cada etapa de la cadena de producción y comercialización. Los contribuyentes registrados deben presentar declaraciones mensuales y pagar el IVA correspondiente a la Superintendencia de Administración Tributaria (SAT) de Guatemala.\r\n" + //
                                         "\r\n" + //
                                         ""); 
-                                    
+                                    break;
+                                case 4: 
+                                System.out.println("Estan exentos de IVA: ");
+                                System.out.println("Colegios Privados, universidades, IGGS, Entidades religiosas, Confederación deportiva y Comité Olímpico");                      
+                                break; 
                     }
 } 
 }
