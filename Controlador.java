@@ -20,6 +20,7 @@ public class Controlador {
     private Vista vista;
     private IVA IVA; 
     private IUSI IUSI;
+    private Login login;
     
     public Controlador(){
         scanner = new Scanner(System.in); 
@@ -30,11 +31,38 @@ public class Controlador {
         vista = new Vista(); 
         IVA = new IVA();
         IUSI = new IUSI(); 
+        login = new Login();
+
     }
 
     public void ejecutar(){
         boolean continuar = true;
+        
+        System.out.println("\nBienvenido a este programa");
+        System.out.println("1. Iniciar sesión");
+        System.out.println("2. Nuevo usuario");
+        int opcion0 = scanner.nextInt();
+    
+        switch (opcion0) {
+            case 1:
+                System.out.println("\nIngresa tu nombre de usuario: ");
+                String nombreUsuario = scanner.next();
+                System.out.println("Ingresa tu contraseña: ");
+                String contraseña = scanner.next();
+                login.IniciarSesion(nombreUsuario, contraseña, "Usuarios.csv"); // Llamar al método en la instancia
+                break;
 
+            case 2:
+                System.out.println("\nIngresa un nuevo nombre de usuario: ");
+                String nuevoNombreUsuario = scanner.next();
+                System.out.println("Ingresa una nueva contraseña: ");
+                String nuevaContraseña = scanner.next();
+                login.agregarUsuario(nuevoNombreUsuario, nuevaContraseña, "Usuarios.csv");
+                break;
+        }
+
+
+        System.out.println("\nDisfruta del programa");
         while (continuar) {
             vista.mostrarMenu();
             int opcion = scanner.nextInt();
