@@ -26,7 +26,7 @@ public class Controlador {
         scanner = new Scanner(System.in); 
         habitos=new HabitosFinancierosSaludables();
         educacionFinanciera = new EducacionFinanciera();
-        presupuesto = new Presupuesto();
+        presupuesto = new Presupuesto("Presupuesto.csv");
         cuenta = new DeudasYCredito();
         vista = new Vista(); 
         IVA = new IVA();
@@ -38,6 +38,7 @@ public class Controlador {
     public void ejecutar(){
         boolean continuar = true;
         
+        //Login
         System.out.println("\nBienvenido a este programa");
         System.out.println("1. Iniciar sesión");
         System.out.println("2. Nuevo usuario");
@@ -49,7 +50,7 @@ public class Controlador {
                 String nombreUsuario = scanner.next();
                 System.out.println("Ingresa tu contraseña: ");
                 String contraseña = scanner.next();
-                login.IniciarSesion(nombreUsuario, contraseña, "Usuarios.csv"); // Llamar al método en la instancia
+                login.IniciarSesion(nombreUsuario, contraseña, "Usuarios.csv");
                 break;
 
             case 2:
@@ -66,12 +67,13 @@ public class Controlador {
         while (continuar) {
             vista.mostrarMenu();
             int opcion = scanner.nextInt();
-            scanner.nextLine(); //Por si se queda un espacio flotando :)
+            scanner.nextLine(); 
 
             switch (opcion) { 
                 case 1:
                     //AQUI VA PRESUPUESTO 
                     presupuesto.calculopresupues(); 
+                    presupuesto.guardarEnCSV();
             break;
                     
                     

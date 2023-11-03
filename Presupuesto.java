@@ -2,6 +2,9 @@
 //Fecha de última modificación: 05 de octubre de 2023
 
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Presupuesto {
     private int presupuesto;
@@ -10,18 +13,20 @@ public class Presupuesto {
     private int actividades_recreativas;
     private int ahorro;
     private Scanner scanner;
+    private String nombreArchivo;
 
-    public Presupuesto(){
+    public Presupuesto(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo; 
         presupuesto = 0;
         necesidades_basicas = 0;
         deudas_pagos = 0;
         actividades_recreativas = 0;
         ahorro = 0;
-        scanner = new Scanner(System.in); 
+        scanner = new Scanner(System.in);
     }
 
     public Presupuesto(int presupuesto, int necesidades_basicas, int deudas_pagos, int actividades_recreativas,
-            int ahorro) {
+            int ahorro, String nombreArchivo) {
         this.presupuesto = presupuesto;
         this.necesidades_basicas = necesidades_basicas;
         this.deudas_pagos = deudas_pagos;
@@ -140,4 +145,19 @@ public class Presupuesto {
                         break;
                     }
     }
+
+    //Metodo para Guardar datos en el CSV
+    public void guardarEnCSV() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo, false))) {
+            writer.write("Presupuesto, Necesidades Basicas, Deuda Pagos, Actividades Recreativas, Ahorro");
+            writer.newLine();
+            writer.write(presupuesto + "," + necesidades_basicas + "," + deudas_pagos + "," + actividades_recreativas + "," + ahorro);
+            writer.newLine();
+            System.out.println("Datos guardados en el archivo CSV.");
+        } catch (IOException e) {
+            System.out.println("Error al guardar los datos en el archivo CSV: " + e.getMessage());
+        }
+    }
+
 }
+
