@@ -4,10 +4,17 @@ public class EducacionFinanciera {
     private int edadUsuario;
 
 
+    /**
+     * Se le asigna valor inicial a la edad del usuaio
+     */
     public EducacionFinanciera() {
         edadUsuario = 0;
     }
 
+    /**
+     * Crea el contructor de la edad del usuario
+     * @param edadUsuario
+     */
     public EducacionFinanciera(int edadUsuario) {
         this.edadUsuario = edadUsuario;
     }
@@ -21,6 +28,10 @@ public class EducacionFinanciera {
     }
 
     // Métodos para Consejos a Adultos
+
+    /**
+     * Muestra consejos para adultos respecto a la planificacion financiera personal
+     */
     public void planificacionFinancieraPersonalAdul() {
         System.out.println(
         "\n¿Que es la planificacion financiera personal?:\n" +
@@ -31,6 +42,9 @@ public class EducacionFinanciera {
         "o incluso retirarte cómodamente cuando seas mayor.");
     }
 
+    /**
+     *  Muestra consejo de ahorro para adultos 
+     */
     public void ahorroInversionAdul() {
         System.out.println(
         "\nUn consejo fundamental para un adulto que desea ahorrar es:\n" +
@@ -54,6 +68,9 @@ public class EducacionFinanciera {
         "pero puede ayudarte a administrarlo de manera más efectiva a largo plazo.");
     }
 
+    /**
+     * Le da al usuario consejos de gestion de deudad a los adultos
+     */
     public void gestionDeDeudasAdul() {
         System.out.println(
         "\nUn consejo importante para un adulto sobre la gestión de deudas es:\n" +
@@ -66,6 +83,9 @@ public class EducacionFinanciera {
         "o (avalanche) y puede ayudarte a ahorrar dinero a largo plazo y mejorar tu salud financiera.");
     }
 
+    /**
+     * Le da al usuario consejos sobre la educacion de impuesto, esto a los usuarios que son adultos
+     */
     public void educacionSobreImpuestosAdul() {
         System.out.println(
         "\nUn consejo importante para un adulto en relación con los impuestos es:\n" +
@@ -80,6 +100,9 @@ public class EducacionFinanciera {
         "software de contabilidad o aplicaciones móviles para facilitar el seguimiento de tus finanzas y documentos fiscales.");
     }
 
+    /**
+     * Le da al usuario consejo ded manejo de creditos, esto a los usuarios que son adultos
+     */
     public void manejoDelCreditoAdul() {
         System.out.println(
         "\nUn consejo esencial para un adulto en relación con el manejo del crédito es:\n" +
@@ -100,6 +123,9 @@ public class EducacionFinanciera {
         "puedes permitirte gastar y pagar en términos de crédito. ");
     }
 
+    /**
+     * Da consejos de planificacio para a el futuro, a los uasuario que son adultos
+     */
     public void planificacionParaElFuturoAdul() {
         System.out.println(
         "\nUn consejo crucial para la planificación financiera a largo plazo de un adulto es:\n" +
@@ -124,6 +150,9 @@ public class EducacionFinanciera {
     }
 
     // Métodos para Consejos a Adolescentes
+    /**
+     * Le da consejos a los adolecentes acerca de lo que es el ahorro de inversion
+     */
     public void ahorroInversionAdolescente() {
         System.out.println(
             "Un consejo valioso para un adolescente que desea aprender sobre ahorro e inversión es:\n" +
@@ -157,6 +186,9 @@ public class EducacionFinanciera {
         );
     }
 
+    /**
+     * Le da al usuario que es adolecente, consejos sobre lo que es la gestion de dinero
+     */
     public void gestionDeDineroAdolescente() {
         System.out.println(
             "Un consejo valioso para un adolescente sobre la gestión del dinero es:\n" +
@@ -186,6 +218,9 @@ public class EducacionFinanciera {
         );
     }
 
+    /**
+     * Le da al usuario que es adolecente lo que es la eduacacion sobre impuesto
+     */
     public void educacionSobreImpuestoAdolescente() {
         System.out.println(
             "Un consejo importante para un adolescente en relación con la paga de impuestos es:\n" +
@@ -213,6 +248,9 @@ public class EducacionFinanciera {
             "sorprenderte con una deuda de impuestos que no puedes pagar.\n");
     }
 
+    /**
+     * Le da al usuario el cual es adolecente lo que es el manejo de credito
+     */
     public void manejoDelCreditoAdolescente() {
         System.out.println(
             "Un consejo valioso para un adolescente sobre el manejo del crédito es:\n" +
@@ -245,6 +283,9 @@ public class EducacionFinanciera {
         );
     }
 
+    /**
+     * Le da al usuario el cual es adolecente lo que es la planificacion para su futuro
+     */
     public void planificacionParaElFuturoAdolescente() {
         System.out.println(
             "Un consejo valioso para un adolescente sobre la planificación de su futuro financiero es:\n" +

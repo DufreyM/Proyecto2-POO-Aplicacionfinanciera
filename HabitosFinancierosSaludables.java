@@ -15,6 +15,9 @@ import java.util.Random;
 public class HabitosFinancierosSaludables {
     private Map<Integer, String> consejosFinancieros; 
 
+    /**
+     * Diccionario con consejos 
+     */
     public HabitosFinancierosSaludables() {
         consejosFinancieros = new HashMap<>(); // Diccionario con todos los posibles consejos que le puedo dar al usuario. 
         consejosFinancieros.put(1,"Gestionar un presupuesto: Mantener un registro claro de tus ingresos y gastos te ayudará a optimizar el uso de tus recursos. Categorizar tus gastos en áreas como educación, vivienda, entretenimiento y transporte puede ser beneficioso.");
@@ -34,6 +37,9 @@ public class HabitosFinancierosSaludables {
         consejosFinancieros.put(15, "Presupuesto para proyectos a largo plazo: Si tienes proyectos a largo plazo, como la construcción o renovación de una vivienda, crea un presupuesto detallado y ahorra gradualmente para alcanzar esas metas financieras."); 
     }
 
+    /**
+     * @return retorna el consejo segun el numero aleatorio
+     */
     public String obtenerConsejo() { //Para escoger un consejo al azar entre los que se encuentran
         Random random = new Random(); 
         int numeroAleatorio=random.nextInt((consejosFinancieros.size())+1);
