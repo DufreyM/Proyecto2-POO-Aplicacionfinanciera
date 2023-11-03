@@ -1,26 +1,42 @@
 import java.util.Scanner;
 
+/*
+ * Esta clase simula un credito y los intereses que se generan
+ */
 public class DeudasYCredito {
     private double deudas;
     private double credito;
     private double tasaInteres;
     Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Asigna valores iniciales y la tasa de interes
+     */
     public DeudasYCredito() {
         this.deudas = 0;
         this.credito = 0;
         this.tasaInteres = 0.05; // Tasa de interés del 5% 
     }
 
+    /**
+     * Muestra la cantidad de cretido obtenida
+     */
     public void mostrarCredito() {
         System.out.println("Cantidad de crédito actual: " + this.credito);
     }
 
+    /**
+     * Muestra la cantidad deuda generada
+     */
     public void mostrarDeudas() {
         double deudas = this.credito + (this.credito * this.tasaInteres); 
         System.out.println("Cantidad de deudas: " + deudas);
     }
 
+    /**
+     * Muestra la cantidad de prestamos pedida por el usuario
+     * @param cantidad guarda la cantidad del credito
+     */
     public void tomarPrestamo(double cantidad) {
         if (cantidad > 0) {
             this.credito += cantidad;
@@ -30,6 +46,11 @@ public class DeudasYCredito {
         }
     }
 
+
+    /**
+     * Muestra la cantidad de deuda pagada
+     * @param cantidad guarda la cantidad de deuda
+     */
     public void pagarDeuda(double cantidad) {
         if (cantidad > 0) {
             if (cantidad <= this.deudas) {
@@ -43,12 +64,18 @@ public class DeudasYCredito {
         }
     }
 
+    /**
+     * Calcula el interes
+     */
     public void calcularInteres() {
         double interes = this.credito * this.tasaInteres;
         this.credito += interes;
         System.out.println("Se ha calculado un interés de " + interes + " sobre tus deudas.");
     }
 
+            /**
+             * Inicia el menu para el apartado de deudas y credito
+             */
             public void ejecutarcuenta(){
             
             

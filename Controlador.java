@@ -22,6 +22,9 @@ public class Controlador {
     private IUSI IUSI;
     private Login login;
     
+    /**
+     * Se llama a los contructores de cada una de las clases
+     */
     public Controlador(){
         scanner = new Scanner(System.in); 
         habitos=new HabitosFinancierosSaludables();
@@ -35,6 +38,9 @@ public class Controlador {
 
     }
 
+    /**
+     * Ejecutar inicializa el programa
+     */
     public void ejecutar(){
         boolean continuar = true;
         
