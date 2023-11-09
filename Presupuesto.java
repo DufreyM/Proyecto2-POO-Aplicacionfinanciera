@@ -7,11 +7,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Presupuesto {
-    private int presupuesto;
-    private int necesidades_basicas;
-    private int deudas_pagos;
-    private int actividades_recreativas;
-    private int ahorro;
+    private double presupuesto;
+    private double necesidades_basicas;
+    private double deudas_pagos;
+    private double actividades_recreativas;
+    private double ahorro;
     private Scanner scanner;
     private String nombreArchivo;
 
@@ -33,34 +33,34 @@ public class Presupuesto {
         this.actividades_recreativas = actividades_recreativas;
         this.ahorro = ahorro;
     }
-    public int getPresupuesto() {
+    public double getPresupuesto() {
         return presupuesto;
     }
-    public void setPresupuesto(int presupuesto) {
+    public void setPresupuesto(double presupuesto) {
         this.presupuesto = presupuesto;
     }
-    public int getNecesidades_basicas() {
+    public double getNecesidades_basicas() {
         return necesidades_basicas;
     }
-    public void setNecesidades_basicas(int necesidades_basicas) {
+    public void setNecesidades_basicas(double necesidades_basicas) {
         this.necesidades_basicas = necesidades_basicas;
     }
-    public int getDeudas_pagos() {
+    public double getDeudas_pagos() {
         return deudas_pagos;
     }
-    public void setDeudas_pagos(int deudas_pagos) {
+    public void setDeudas_pagos(double deudas_pagos) {
         this.deudas_pagos = deudas_pagos;
     }
-    public int getActividades_recreativas() {
+    public double getActividades_recreativas() {
         return actividades_recreativas;
     }
-    public void setActividades_recreativas(int actividades_recreativas) {
+    public void setActividades_recreativas(double actividades_recreativas) {
         this.actividades_recreativas = actividades_recreativas;
     }
-    public int getAhorro() {
+    public double getAhorro() {
         return ahorro;
     }
-    public void setAhorro(int ahorro) {
+    public void setAhorro(double ahorro) {
         this.ahorro = ahorro;
     }
 
@@ -68,17 +68,17 @@ public class Presupuesto {
      * @return
      */
     public double CalculosNecesidadesBasicas(){
-        int resultados_presupuesto1 = presupuesto - necesidades_basicas;
+        double resultados_presupuesto1 = presupuesto - necesidades_basicas;
         return resultados_presupuesto1;
     }
 
     public double CalculosDeudasPagos(){
-        int resultados_presupuesto2 = presupuesto - necesidades_basicas - deudas_pagos;
+        double resultados_presupuesto2 = presupuesto - necesidades_basicas - deudas_pagos;
         return resultados_presupuesto2;
     }
 
     public double CalculosActividadesRecreativas(){
-        int resultados_presupuesto3 = presupuesto - necesidades_basicas - deudas_pagos - actividades_recreativas;
+        double resultados_presupuesto3 = presupuesto - necesidades_basicas - deudas_pagos - actividades_recreativas;
         return resultados_presupuesto3;
     }
 
@@ -87,21 +87,21 @@ public class Presupuesto {
      * @return double El ahorro del usuario
      */
     public double CalculosAhorro(){
-        int resultados_presupuesto4 = presupuesto - necesidades_basicas - deudas_pagos - actividades_recreativas - ahorro;
+        double resultados_presupuesto4 = presupuesto - necesidades_basicas - deudas_pagos - actividades_recreativas - ahorro;
         return resultados_presupuesto4;
     }
 
     public void calculopresupues(){
         System.out.println("\nBienvenido al simulador del presupuesto");
-                    System.out.println("A continuacion ingresa tu ingreso mensual, únicamente números enteros (0000)");
-                    int presu = scanner.nextInt();
+                    System.out.println("A continuacion ingresa tu ingreso mensual");
+                    double presu = scanner.nextDouble();
                     setPresupuesto(presu);
 
                     while (presu > 0) {
                         System.out.println("\nTu presupuesto actual es de: " + presu);
                         System.out.println("Ingresa la cantidad que desees dedicar a los gastos básicos");
                         System.out.println("(Comida, Salud, Vivienda, Transporte y demás)");
-                        int basicas = scanner.nextInt();
+                        double basicas = scanner.nextDouble();
                         setNecesidades_basicas(basicas);
                         double presupuestoRestante = CalculosNecesidadesBasicas();
                         System.out.println("\nTe quedan $" + presupuestoRestante + " para otras categorías.");
@@ -112,7 +112,7 @@ public class Presupuesto {
                         }
                     
                         System.out.println("Ingresa la cantidad que desees dedicar a deudas y pagos");
-                        int deudas = scanner.nextInt();
+                        double deudas = scanner.nextDouble();
                         setDeudas_pagos(deudas);
                         double presupuestoRestante2 = CalculosDeudasPagos();
                         System.out.println("\nTe quedan $" + presupuestoRestante2 + " para otras categorías.");
@@ -123,7 +123,7 @@ public class Presupuesto {
                         }
                     
                         System.out.println("Ingresa la cantidad que desees dedicar a Actividades recreativas");
-                        int actividades = scanner.nextInt();
+                        double actividades = scanner.nextDouble();
                         setActividades_recreativas(actividades);
                         double presupuestoRestante3 = CalculosActividadesRecreativas();
                         System.out.println("\nTe quedan $" + presupuestoRestante3 + " para otras categorías.");
@@ -134,7 +134,7 @@ public class Presupuesto {
                         }
                     
                         System.out.println("Ingresa la cantidad que desees dedicar a Ahorro");
-                        int ahorrar = scanner.nextInt();
+                        double ahorrar = scanner.nextDouble();
                         setAhorro(ahorrar);
                         double presupuestoRestante4 = CalculosAhorro();
 
