@@ -36,13 +36,7 @@ public class Controlador {
 
     }
 
- 
 
-  
-    /**
-     * Ejecuta codigo
-     * 
-     */
     public void ejecutar(){
         boolean continuar = true;
         
