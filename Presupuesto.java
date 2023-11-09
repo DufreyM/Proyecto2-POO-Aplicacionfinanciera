@@ -82,6 +82,10 @@ public class Presupuesto {
         return resultados_presupuesto3;
     }
 
+    /**
+     * Calcula el ahorro
+     * @return double El ahorro del usuario
+     */
     public double CalculosAhorro(){
         int resultados_presupuesto4 = presupuesto - necesidades_basicas - deudas_pagos - actividades_recreativas - ahorro;
         return resultados_presupuesto4;

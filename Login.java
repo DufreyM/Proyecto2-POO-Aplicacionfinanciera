@@ -43,7 +43,7 @@ public class Login {
         }
     }
     
-    //Metodo para verificar datos e iniciar login
+    //Metodo para iniciar sesion
     public void IniciarSesion(String nombre, String contraseña, String nombreDelArchivo) {
         try {
             BufferedReader lector = new BufferedReader(new FileReader(nombreDelArchivo));
@@ -61,11 +61,12 @@ public class Login {
     
             lector.close();
     
-            if (inicioSesionExitoso == true) {
+            if (inicioSesionExitoso) {
                 System.out.println("Has iniciado sesión.");
             } else {
                 System.out.println("Parece que el usuario o contraseña no coinciden.");
-                
+                System.out.println("No se ha encontrado el usuario o contraseña en el archivo.");
+                System.exit(0); // Termina el programa
             }
     
         } catch (IOException e) {
@@ -73,5 +74,6 @@ public class Login {
             e.printStackTrace();
         }
     }
+    
     
 }

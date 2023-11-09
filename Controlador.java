@@ -22,6 +22,7 @@ public class Controlador {
     private IUSI IUSI;
     private Login login;
     
+
     public Controlador(){
         scanner = new Scanner(System.in); 
         habitos=new HabitosFinancierosSaludables();
@@ -35,6 +36,13 @@ public class Controlador {
 
     }
 
+ 
+
+  
+    /**
+     * Ejecuta codigo
+     * 
+     */
     public void ejecutar(){
         boolean continuar = true;
         
