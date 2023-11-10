@@ -7,7 +7,8 @@ public class Vista {
         System.out.println("4. Impuestos");
         System.out.println("5. Seguro");
         System.out.println("6. Hábitos financieros saludables");
-        System.out.println("7. Salir");
+        System.out.println("7. Planificación a Largo Plazo");
+        System.out.println("8. Salir del sistema");
         System.out.print("Seleccione una opción: ");
     }
 

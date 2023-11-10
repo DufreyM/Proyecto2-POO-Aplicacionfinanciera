@@ -21,7 +21,7 @@ public class Controlador {
     private IVA IVA; 
     private IUSI IUSI;
     private Login login;
-    
+    private planificacionLargoPlazo planificacion;
 
     public Controlador(){
         scanner = new Scanner(System.in); 
@@ -33,7 +33,7 @@ public class Controlador {
         IVA = new IVA();
         IUSI = new IUSI(); 
         login = new Login();
-
+        planificacion = new planificacionLargoPlazo();
     }
 
 
@@ -194,6 +194,11 @@ public class Controlador {
                     System.out.println(consejoAleatorio); 
                     break;
                 case 7: 
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Ingrese el monto objetivo:");
+                double montoObjetivo = scanner.nextDouble();
+                planificacion.establecerMeta(montoObjetivo);
+                case 8: 
                     continuar = false;
                     break;
                 default:
